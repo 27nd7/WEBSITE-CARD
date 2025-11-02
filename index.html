@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deaf Immigration Visa Services (DIVS)</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style> 
+        /* --- 1. Global & Variables --- */
+        :root {
+            --accent-color: #ffaa00; /* Orange/Yellow */
+            --primary-color: #004d99; /* Dark Blue */
+            --text-light: #f0f0f0;
+            --bg-dark: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            /* Remove padding, as we no longer have side bars */
+        }
+
+        /* --- 2. Main Card Container --- */
+        .card-container {
+            width: 90%;
+            max-width: 600px;
+            background: #282828; 
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7); 
+            border: 2px solid var(--accent-color); 
+            transition: all 0.4s ease;
+            z-index: 10; 
+        }
+        
+        .card-container:hover {
+            box-shadow: 0 0 40px rgba(255, 153, 0, 0.5),
+                        0 15px 30px rgba(0, 0, 0, 0.7);
+            transform: translateY(-5px);
+        }
+
+        /* --- 3. Header & Logo --- */
+        .header {
+            margin-bottom: 25px;
+        }
+
+        .logo {
+            width: 100px; 
+            height: 100px;
+            border-radius: 50%;
+            border: 5px solid var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .company-name {
+            color: var(--text-light);
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .tagline {
+            color: var(--accent-color);
+            margin: 5px 0 0 0;
+            font-size: 1rem;
+        }
+
+        /* --- 4. Specialization / Services --- */
+        .services {
+            margin-bottom: 30px;
+        }
+
+        /* Flags Section with ALL FIVE FLAGS */
+        .flags-section {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Reduced gap for five flags */
+            margin-bottom: 15px;
+        }
+
+        .flag-image {
+            width: 35px; /* Slightly reduced flag size for five */
+            height: auto;
+            border: 2px solid var(--text-light);
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .countries {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        /* --- 5. Contact Info / Staff / Numbers (CLEANED UP) --- */
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border-top: 1px solid #444; 
+            padding-top: 20px;
+        }
+
+        .person {
+            flex: 1;
+            padding: 0 10px;
+        }
+
+        .person h3 {
+            font-size: 1.1rem;
+            margin: 0 0 5px 0;
+            color: var(--accent-color);
+        }
+
+        .person a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        /* --- 6. Social Media Icons (CORRECT PLACEMENT) --- */
+        .social-icons {
+            text-align: center;
+            margin: 10px 0 25px; 
+            border-bottom: 1px solid #444; 
+            padding-bottom: 20px;
+        }
+        
+        .social-icons a {
+            color: #ffffff; 
+            font-size: 28px;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+
+        /* --- 7. Address Link --- */
+        .address-link {
+            display: block;
+            text-align: center;
+            color: #aaa;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            padding: 10px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            transition: border-color 0.3s, color 0.3s;
+        }
+
+        .address-link:hover {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        /* --- 8. Floating WhatsApp Button --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card-container">
+        
+        <div class="header">
+            <img src="logo1.png" alt="Deaf Immigration Visa Services Logo" class="logo"> 
+            <h1 class="company-name">DEAF IMMIGRATION VISA SERVICES</h1>
+            <p class="tagline">Your Gateway to the World</p>
+        </div>
+
+        <div class="services">
+            <div class="flags-section">
+                <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" class="flag-image">
+                <img src="https://flagcdn.com/w40/us.png" alt="USA Flag" class="flag-image">
+                <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" class="flag-image">
+                <img src="https://flagcdn.com/w40/my.png" alt="Malaysia Flag" class="flag-image">
+                <img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" class="flag-image">
+            </div>
+            
+            <h2>Specializing In:</h2>
+            <p class="countries">UK | USA | CANADA | MALAYSIA | SPAIN</p>
+            <p>Visit Visas | Asian & European Work Visas Available</p>
+        </div>
+
+        <div class="contact-info">
+            
+            <div class="person">
+                <h3>Faisal Khan</h3>
+                <a href="tel:+923265343975">0326-5343975</a>
+            </div>
+            
+            <div class="person">
+                <h3>Nabeel Anjum</h3>
+                <a href="tel:+923344645420">0334-4645420</a>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@deafvisaservices" target="_blank" title="Visit our YouTube Channel">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.facebook.com/Faisalkhan88990/" target="_blank" title="Visit our Facebook Page">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+        
+        <a href="https://maps.google.com/" target="_blank" class="address-link">
+            📍 Office Address: Near Hascol Petrol Pump, Sarai Alamgir
+        </a>
+
+    </div>
+    
+    <a href="https://wa.me/923079058311?text=Hello%20DIVS%2C%20I%20am%20interested%20in%20your%20visa%20services." 
+       class="whatsapp-float" 
+       target="_blank" 
+       title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i> 
+    </a>
+
+</body>
+</html>
