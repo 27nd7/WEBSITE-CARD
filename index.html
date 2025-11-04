@@ -96,19 +96,26 @@
             gap: 10px; 
             margin-bottom: 15px;
         }
+        
+        /* Flag Link Container */
+        .flag-link {
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .flag-link:hover {
+            transform: scale(1.15); 
+            box-shadow: 0 0 15px var(--accent-color); 
+        }
 
         .flag-image {
             width: 35px; 
             height: auto;
             border: 2px solid var(--text-light);
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-            cursor: pointer; 
-        }
-
-        .flag-image:hover {
-            transform: scale(1.15); 
-            box-shadow: 0 0 15px var(--accent-color); 
+            display: block; /* Important for clean display inside the link */
         }
 
         h2 {
@@ -256,11 +263,21 @@
 
         <div class="services">
             <div class="flags-section">
-                <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" class="flag-image">
-                <img src="https://flagcdn.com/w40/us.png" alt="USA Flag" class="flag-image">
-                <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" class="flag-image">
-                <img src="https://flagcdn.com/w40/my.png" alt="Malaysia Flag" class="flag-image">
-                <img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" class="flag-image">
+                <a href="uk-docs.html" class="flag-link" title="See UK Visa Document Requirements">
+                    <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" class="flag-image">
+                </a>
+                <a href="usa-docs.html" class="flag-link" title="See USA Visa Document Requirements">
+                    <img src="https://flagcdn.com/w40/us.png" alt="USA Flag" class="flag-image">
+                </a>
+                <a href="canada-docs.html" class="flag-link" title="See Canada Visa Document Requirements">
+                    <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" class="flag-image">
+                </a>
+                <a href="dubai-docs.html" class="flag-link" title="See UAE Visa Document Requirements">
+                    <img src="https://flagcdn.com/w40/ae.png" alt="UAE Flag" class="flag-image">
+                </a>
+                <a href="spain-docs.html" class="flag-link" title="See Spain Visa Document Requirements">
+                    <img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" class="flag-image">
+                </a>
             </div>
             
             <h2>Specializing In:</h2>
@@ -291,7 +308,7 @@
         </div>
         
         <a href="https://maps.app.goo.gl/TWZ7JtnmpQtqDYhYA" target="_blank" class="address-link">
-            📍 CLICK : Office Address Near Hascol Petrol Pump, Sarai Alamgir
+            📍 CLICK TO NAVIGATE: Office Address Near Hascol Petrol Pump, Sarai Alamgir
         </a>
 
     </div>
