@@ -207,7 +207,7 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
         }
         
-        /* --- 6. YOUTUBE VIDEO STYLES (NEW) --- */
+        /* --- 6. YOUTUBE VIDEO LINKS STYLES (UPDATED) --- */
         .video-section {
             margin: 30px 0;
             padding: 15px 0;
@@ -217,38 +217,47 @@
 
         .video-grid {
             display: flex;
-            flex-direction: column; /* Stack vertically for best fit in the card */
-            gap: 20px;
+            flex-direction: column; /* Stack vertically */
+            gap: 15px;
             margin-top: 15px;
         }
 
-        .video-wrapper {
-            position: relative;
-            /* Creates a 16:9 aspect ratio container (9 / 16 * 100 = 56.25%) */
-            padding-bottom: 56.25%; 
-            height: 0;
-            overflow: hidden;
-            max-width: 100%;
-            background: #000;
+        .video-link-block {
+            display: block;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-decoration: none;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            text-align: left; 
+            border-left: 5px solid var(--accent-color); 
         }
 
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
+        .video-link-block:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-dark);
+            transform: translateY(-2px);
         }
+
+        .video-link-block i {
+            margin-right: 10px;
+            color: var(--secondary-accent);
+        }
+
+        .video-link-block:hover i {
+            color: var(--bg-dark); 
+        }
+        
+        /* Removed .video-wrapper and iframe specific styles */
 
         /* --- 7. Visitor Counter --- */
         .visitor-counter {
             text-align: center;
             margin: 20px 0 10px;
             padding: 15px 0;
-            /* Removed redundant borders, videos now have top/bottom borders */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -447,31 +456,19 @@
         </div>
 
         <div class="video-section">
-            <h2>Latest Visa Guides</h2>
+            <h2>Latest Visa Guides on YouTube</h2>
             <div class="video-grid">
                 
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/M7lc1UVf-VE?rel=0&modestbranding=1" 
-                            title="Deaf Visa Services YouTube Guide 1" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen
-                            referrerpolicy="strict-origin-when-cross-origin"> 
-                    </iframe>
-                </div>
+                <a href="https://www.youtube.com/watch?v=K4gvdskj8tw" target="_blank" class="video-link-block">
+                    <i class="fab fa-youtube"></i> United States 🇺🇸 All Embassy Letters Explain | Sign Language Guide
+                </a>
 
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/Xj4jJ_h4g_Y?rel=0&modestbranding=1" 
-                            title="Deaf Visa Services YouTube Guide 2" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen
-                            referrerpolicy="strict-origin-when-cross-origin">
-                    </iframe>
-                </div>
+                <a href="https://www.youtube.com/watch?v=aR7DHeUAHuM" target="_blank" class="video-link-block">
+                    <i class="fab fa-youtube"></i> Overstaying Your Visa? Big Trouble for Deaf Travelers!
+                </a>
 
             </div>
-            <p style="color:var(--accent-color); font-size: 0.9rem; margin-top: 15px;">Click play on a video above to view full-screen on YouTube!</p>
+            <p style="color:var(--accent-color); font-size: 0.9rem; margin-top: 15px;">Click on any link above to watch the video directly on YouTube!</p>
         </div>
         <div class="visitor-counter">
             <i class="fas fa-eye"></i>
