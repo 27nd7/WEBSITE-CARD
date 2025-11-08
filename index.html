@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deaf Immigration Visa Services (DIVS)</title>
+    <title>Deaf Immigration Visa Services (DIVS) - Global Visa Specialists</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style> 
         /* --- 1. Global & Variables --- */
         :root {
-            --accent-color: #ffaa00; /* Orange/Yellow for text and highlights */
+            --accent-color: #ffaa00; /* Orange/Yellow for highlights */
             --secondary-accent: #ff4500; /* Brighter Orange for animation */
             --primary-color: #004d99; /* Dark Blue */
             --text-light: #f0f0f0;
             --bg-dark: #1a1a1a;
-            --card-bg: #282828;
+            --bg-medium: #282828;
             --cta-color: #4CAF50; /* Clean green for CTA buttons */
+            --max-width: 1200px;
         }
 
-        /* Border Glow Animation */
+        /* Border Glow Animation (Still used on specific elements) */
         @keyframes border-glow {
             0% { border-color: var(--accent-color); box-shadow: 0 0 10px rgba(255, 170, 0, 0.5); }
             50% { border-color: var(--secondary-accent); box-shadow: 0 0 15px rgba(255, 69, 0, 0.8); }
@@ -34,72 +35,94 @@
             padding: 0;
             background-color: var(--bg-dark);
             color: var(--text-light);
+            text-align: center;
+        }
+
+        /* Wrapper for main content to prevent stretching too wide on desktop */
+        .content-wrapper {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- 2. Header / Navigation (Full Width) --- */
+        .site-header {
+            background-color: var(--bg-medium);
+            padding: 20px 0;
+            border-bottom: 3px solid var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
             display: flex;
-            justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            text-align: center;
+            justify-content: center; /* Center content on smaller screens */
+            gap: 20px;
         }
 
-        /* --- 2. Main Card Container --- */
-        .card-container {
-            width: 90%;
-            max-width: 600px;
-            background: var(--card-bg); 
-            border-radius: 20px;
-            padding: 40px 30px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7); 
-            border: 2px solid var(--accent-color); 
-            transition: all 0.4s ease;
-            z-index: 10; 
-            animation: border-glow 4s infinite alternate; 
-        }
-        
-        .card-container:hover {
-            box-shadow: 0 0 40px rgba(255, 153, 0, 0.5),
-                        0 15px 30px rgba(0, 0, 0, 0.7);
-            transform: translateY(-5px);
-        }
-
-        /* --- 3. Header & Logo Layout --- */
-        .header {
-            margin-bottom: 25px; 
-            text-align: center;
-        }
-        
         .logo {
-            width: 80px; 
+            width: 70px; 
             height: auto;
             border-radius: 50%; 
-            margin-bottom: 10px;
+            border: 2px solid var(--text-light);
+            flex-shrink: 0;
+        }
+
+        .branding {
+            text-align: left;
         }
 
         .company-name {
             color: var(--text-light);
             margin: 0;
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             letter-spacing: 2px;
+            font-weight: 900;
         }
 
         .tagline {
             color: var(--accent-color);
             margin: 5px 0 0 0;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-style: italic;
         }
 
-        /* --- 4. Specialization / Services */
-        .services {
+        /* Adjust header layout for larger screens */
+        @media (min-width: 768px) {
+            .header-content {
+                justify-content: space-between;
+                max-width: var(--max-width);
+                margin: 0 auto;
+                padding: 0 40px;
+            }
+            .branding {
+                flex-grow: 1;
+                margin-left: 20px;
+            }
+            .company-name {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* --- 3. Main Content Sections --- */
+        .section {
+            padding: 40px 0;
             margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #383838;
+            border-radius: 10px;
         }
 
+        .services-section {
+            background-color: var(--bg-medium);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Flag and Specialization Section */
         .flags-section {
             display: flex;
             justify-content: center;
             gap: 15px; 
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             flex-wrap: wrap; 
         }
         
@@ -116,47 +139,70 @@
         }
 
         .flag-image {
-            width: 35px; 
+            width: 40px; 
             height: auto;
             border: 2px solid var(--text-light);
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
             display: block; 
+            border-radius: 5px;
         }
 
         h2 {
-            font-size: 1.4rem;
+            font-size: 1.8rem;
             color: var(--text-light);
             margin-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
         .countries {
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--accent-color);
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             letter-spacing: 1px;
         }
 
-        /* --- 5. Contact Info / Staff / Videos (LARGE VERTICAL SIZING) --- */
-        
+        /* Contact & Video Row */
         .contact-video-row {
             display: flex;
-            justify-content: space-around;
-            gap: 20px;
+            flex-direction: column; /* Stack vertically on small screens */
+            gap: 30px;
             margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #383838;
         }
 
+        @media (min-width: 600px) {
+            .contact-video-row {
+                flex-direction: row; /* Horizontal on larger screens */
+                justify-content: space-around;
+            }
+        }
+
+        .person-container {
+            flex: 1;
+            padding: 15px;
+            background-color: var(--bg-dark);
+            border-radius: 10px;
+            border: 2px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+        
+        .person-container:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        
         .contact-video-placeholder {
             width: 100%; 
-            max-width: 150px; 
-            height: 250px; 
+            max-width: 180px; /* Made videos slightly larger */
+            height: 300px; 
             background-color: #000;
             border: 2px solid var(--accent-color);
             border-radius: 8px;
             overflow: hidden; 
-            margin-bottom: 10px; 
+            margin: 0 auto 15px; 
         }
         
         .contact-video-placeholder video {
@@ -165,90 +211,79 @@
             object-fit: cover; 
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: space-around;
-            padding-top: 0; 
-            margin-bottom: 10px;
-        }
-
-        .person {
-            flex: 1;
-            padding: 0 10px;
-        }
-
         .person h3 {
-            font-size: 1.1rem;
-            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+            margin: 0 0 10px 0;
             color: var(--accent-color);
         }
 
-        .person a {
+        .person a.cta-button {
             color: var(--text-light);
             text-decoration: none;
             font-weight: bold;
             display: block;
-            font-size: 1rem;
-            padding: 10px 0;
-            margin: 5px 0;
+            font-size: 1.1rem;
+            padding: 12px 0;
+            margin: 10px 0;
             background-color: var(--cta-color);
             border-radius: 8px;
             transition: all 0.3s;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
         }
         
-        .person a i {
+        .person a.cta-button i {
             margin-right: 8px;
         }
 
-        .person a:hover {
+        .person a.cta-button:hover {
             background-color: #388e3c;
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
         }
         
-        /* --- 6. Visitor Counter --- */
+        /* --- 4. Visitor Counter --- */
         .visitor-counter {
             text-align: center;
-            margin: 20px 0 10px;
-            padding: 15px 0;
-            border-top: 1px solid #444; 
-            border-bottom: 1px solid #444; 
+            padding: 20px 0;
+            background-color: var(--bg-medium);
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 15px;
             color: var(--text-light);
+            font-size: 1.2rem;
         }
         
         .visitor-counter i {
-            font-size: 24px;
+            font-size: 28px;
             color: var(--accent-color);
         }
         
-        /* Ensures the counter script output stays inline if it's an image/text */
-        .visitor-counter #live-count {
-            color: var(--accent-color); 
-            font-size: 1.2rem;
-            min-width: 50px;
-        }
-        
+        /* Ensure counter script output stays inline */
         .visitor-counter * {
-            display: inline;
+            display: inline-block;
+            vertical-align: middle;
         }
 
-        /* --- 7. Social Media Icons --- */
+        /* --- 5. Footer & Social Icons --- */
+        .site-footer {
+            background-color: var(--primary-color);
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        
         .social-icons {
             text-align: center;
-            margin: 10px 0 20px; 
-            padding-bottom: 15px;
-            padding-top: 15px;
+            margin-bottom: 20px; 
         }
         
         .social-icons a {
             color: #ffffff; 
-            font-size: 30px;
-            margin: 0 15px;
+            font-size: 35px;
+            margin: 0 18px;
             text-decoration: none;
             transition: color 0.3s, transform 0.3s;
             cursor: pointer;
@@ -260,38 +295,39 @@
         }
         
         .social-caption {
-            color: #aaa;
-            font-size: 0.8rem;
-            margin-top: 5px;
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-top: 10px;
             display: block;
         }
 
-        /* --- 8. Address Link --- */
+        /* Address Link */
         .address-link {
             display: block;
             text-align: center;
             text-decoration: none;
-            margin-top: 20px;
-            font-size: 1rem; 
+            font-size: 1.1rem; 
             padding: 15px;
+            margin: 20px auto 0;
             border-radius: 10px;
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            border: 2px solid var(--primary-color);
+            background-color: var(--accent-color);
+            color: var(--bg-dark);
+            border: 2px solid var(--accent-color);
             font-weight: bold;
-            transition: background-color 0.3s, border-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+            max-width: 500px;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
 
         .address-link:hover {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-            color: var(--bg-dark); 
+            background-color: var(--secondary-accent);
+            border-color: var(--secondary-accent);
+            color: var(--text-light); 
             transform: translateY(-2px); 
-            box-shadow: 0 5px 15px rgba(255, 170, 0, 0.4);
+            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
         }
 
-        /* --- 9. Floating WhatsApp Button --- */
+        /* --- 6. Floating WhatsApp Button --- */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -327,124 +363,24 @@
 
 <body>
 
-    <div class="card-container">
-        
-        <div class="header">
+    <header class="site-header">
+        <div class="header-content">
             <img src="logo1.png" alt="Deaf Immigration Visa Services Logo" class="logo">
-            <h1 class="company-name">DEAF IMMIGRATION VISA SERVICES</h1>
-            <p class="tagline">Your Gateway to the World</p>
+            
+            <div class="branding">
+                <h1 class="company-name">DEAF IMMIGRATION VISA SERVICES</h1>
+                <p class="tagline">Your Gateway to the World: We Understand You.</p>
+            </div>
         </div>
-        <div class="services">
+    </header>
+
+    <main class="content-wrapper">
+        
+        <section class="services-section section">
             <div class="flags-section">
+                <h2>Our Visa Destinations</h2>
                 <a href="uk-docs.html" class="flag-link" title="United Kingdom">
                     <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" class="flag-image">
                 </a>
                 <a href="usa-docs.html" class="flag-link" title="United States">
-                    <img src="https://flagcdn.com/w40/us.png" alt="USA Flag" class="flag-image">
-                </a>
-                <a href="canada-docs.html" class="flag-link" title="Canada">
-                    <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" class="flag-image">
-                </a>
-                <a href="dubai-docs.html" class="flag-link" title="Dubai / UAE">
-                    <img src="https://flagcdn.com/w40/ae.png" alt="Dubai/UAE Flag" class="flag-image">
-                </a>
-                <a href="#" class="flag-link" title="Turkey">
-                    <img src="https://flagcdn.com/w40/tr.png" alt="Turkey Flag" class="flag-image">
-                </a>
-                <a href="#" class="flag-link" title="Malaysia">
-                    <img src="https://flagcdn.com/w40/my.png" alt="Malaysia Flag" class="flag-image">
-                </a>
-                <a href="#" class="flag-link" title="Azerbaijan">
-                    <img src="https://flagcdn.com/w40/az.png" alt="Azerbaijan Flag" class="flag-image">
-                </a>
-                <a href="spain-docs.html" class="flag-link" title="Spain / Schengen">
-                    <img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" class="flag-image">
-                </a>
-            </div>
-            
-            <h2>Specializing In:</h2>
-            <p class="countries">UK | USA | CANADA | DUBAI (UAE) | TURKEY | MALAYSIA | AZERBAIJAN | SPAIN</p>
-            <p>Visit Visas | Asian & European Work Visas Available</p>
-        </div>
-
-        <div class="contact-video-row">
-            
-            <div class="person" style="text-align:center;">
-                <div class="contact-video-placeholder" title="Faisal Khan Sign Language" style="margin-left: auto; margin-right: auto;">
-                    <video src="faisal-video.mp4" 
-                           autoplay 
-                           loop 
-                           muted 
-                           playsinline>
-                        Video unavailable.
-                    </video>
-                </div>
-            </div>
-            
-            <div class="person" style="text-align:center;">
-                <div class="contact-video-placeholder" title="Nabeel Anjum Sign Language" style="margin-left: auto; margin-right: auto;">
-                    <video src="nabeel-video.mp4" 
-                           autoplay 
-                           loop 
-                           muted 
-                           playsinline>
-                        Video unavailable.
-                    </video>
-                </div>
-            </div>
-        </div>
-        <div class="contact-info">
-            
-            <div class="person">
-                <h3>Faisal Khan</h3> 
-                <a href="https://wa.me/923265343975" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Chat / Call
-                </a>
-                <p style="margin: 5px 0 0; color: #ccc; font-size: 0.9rem;">0326-5343975</p>
-            </div>
-            
-            <div class="person">
-                <h3>Nabeel Anjum</h3>
-                <a href="https://wa.me/923344645420" target="_blank">
-                    <i class="fab fa-whatsapp"></i> Chat / Call
-                </a>
-                <p style="margin: 5px 0 0; color: #ccc; font-size: 0.9rem;">0334-4645420</p>
-            </div>
-        </div>
-
-        <div class="visitor-counter">
-            <i class="fas fa-eye"></i>
-            <span style="font-size: 1.1rem; font-weight: bold;">Total Website Views:</span>
-            
-            <div id="sfcnlmb5fzqlw78jtmkywnl38357ledqpxq"></div><script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=nlmb5fzqlw78jtmkywnl38357ledqpxq&down=async" async></script><noscript><a href="https://www.freecounterstat.com" title="hit counter"><img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=nlmb5fzqlw78jtmkywnl38357ledqpxq" border="0" title="hit counter" alt="hit counter"></a></noscript>
-            
-        </div>
-        <div class="social-icons">
-            <a href="https://whatsapp.com/channel/0029VacYVAqFnSz6UxmmMj0C" target="_blank" title="Join our WhatsApp Channel">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            
-            <a href="https://www.youtube.com/@deafvisaservices" target="_blank" title="Visit our YouTube Channel">
-                <i class="fab fa-youtube"></i>
-            </a>
-            <a href="https://www.facebook.com/Faisalkhan88990/" target="_blank" title="Visit our Facebook Page">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <span class="social-caption">WhatsApp Channel | YouTube | Facebook</span>
-        </div>
-        
-        <a href="https://maps.app.goo.gl/TWZ7JtnmpQtqDYhYA" target="_blank" class="address-link">
-            📍 CLICK TO NAVIGATE: Office Address Near Hascol Petrol Pump, Sarai Alamgir
-        </a>
-
-    </div>
-    
-    <a href="https://wa.me/923265343975?text=Hello%20DIVS%2C%20I%20am%20interested%20in%20your%20visa%20services." 
-       class="whatsapp-float" 
-       target="_blank" 
-       title="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i> 
-    </a>
-
-</body>
-</html>
+                    <img src="https://flagcdn.com/w40/us.
