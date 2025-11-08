@@ -88,7 +88,7 @@
             font-style: italic;
         }
 
-        /* --- 4. Specialization / Services --- */
+        /* --- 4. Specialization / Services */
         .services {
             margin-bottom: 30px;
             padding-bottom: 20px;
@@ -100,7 +100,6 @@
             justify-content: center;
             gap: 15px; 
             margin-bottom: 20px;
-            /* Allow flags to wrap on very small screens */
             flex-wrap: wrap; 
         }
         
@@ -208,12 +207,35 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
         }
         
-        /* --- 6. Social Media Icons --- */
+        /* --- 6. Visitor Counter --- */
+        .visitor-counter {
+            text-align: center;
+            margin: 20px 0 10px;
+            padding: 15px 0;
+            border-top: 1px solid #444; 
+            border-bottom: 1px solid #444; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-light);
+        }
+        
+        .visitor-counter i {
+            font-size: 24px;
+            color: var(--accent-color);
+        }
+        
+        /* Ensures the counter script output stays inline if it's an image/text */
+        .visitor-counter * {
+            display: inline;
+        }
+
+        /* --- 7. Social Media Icons --- */
         .social-icons {
             text-align: center;
             margin: 10px 0 20px; 
             padding-bottom: 15px;
-            border-top: 1px solid #444; 
             padding-top: 15px;
         }
         
@@ -238,7 +260,7 @@
             display: block;
         }
 
-        /* --- 7. Address Link --- */
+        /* --- 8. Address Link --- */
         .address-link {
             display: block;
             text-align: center;
@@ -263,7 +285,7 @@
             box-shadow: 0 5px 15px rgba(255, 170, 0, 0.4);
         }
 
-        /* --- 8. Floating WhatsApp Button --- */
+        /* --- 9. Floating WhatsApp Button --- */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -320,7 +342,6 @@
                 <a href="dubai-docs.html" class="flag-link" title="Dubai / UAE">
                     <img src="https://flagcdn.com/w40/ae.png" alt="Dubai/UAE Flag" class="flag-image">
                 </a>
-                
                 <a href="#" class="flag-link" title="Turkey">
                     <img src="https://flagcdn.com/w40/tr.png" alt="Turkey Flag" class="flag-image">
                 </a>
@@ -330,7 +351,6 @@
                 <a href="#" class="flag-link" title="Azerbaijan">
                     <img src="https://flagcdn.com/w40/az.png" alt="Azerbaijan Flag" class="flag-image">
                 </a>
-                
                 <a href="spain-docs.html" class="flag-link" title="Spain / Schengen">
                     <img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" class="flag-image">
                 </a>
@@ -386,14 +406,25 @@
             </div>
         </div>
 
+        <div class="visitor-counter">
+            <i class="fas fa-eye"></i>
+            <span style="font-size: 1.1rem; font-weight: bold;">Total Website Views:</span>
+            
+            <script type="text/javascript" src="https://counter.websiteout.com/js/17/0/27/0"></script>
+            
+        </div>
         <div class="social-icons">
+            <a href="[YOUR_WHATSAPP_CHANNEL_LINK_HERE]" target="_blank" title="Join our WhatsApp Channel">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            
             <a href="https://www.youtube.com/@deafvisaservices" target="_blank" title="Visit our YouTube Channel">
                 <i class="fab fa-youtube"></i>
             </a>
             <a href="https://www.facebook.com/Faisalkhan88990/" target="_blank" title="Visit our Facebook Page">
                 <i class="fab fa-facebook-f"></i>
             </a>
-            <span class="social-caption">YouTube | Facebook</span>
+            <span class="social-caption">WhatsApp Channel | YouTube | Facebook</span>
         </div>
         
         <a href="https://maps.app.goo.gl/TWZ7JtnmpQtqDYhYA" target="_blank" class="address-link">
@@ -402,7 +433,7 @@
 
     </div>
     
-    <a href="https://wa.me/923265343975?text=Hello%20DIVS%2C%20I%20am%20interested%20in%20your%20visa%20services." 
+    <a href="https://wa.me/923079058311?text=Hello%20DIVS%2C%20I%20am%20interested%20in%20your%20visa%20services." 
        class="whatsapp-float" 
        target="_blank" 
        title="Chat on WhatsApp">
@@ -411,4 +442,3 @@
 
 </body>
 </html>
-
