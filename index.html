@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1200, initial-scale=0.3, shrink-to-fit=no">
     <title>Deaf Immigration Visa Services (DIVS) - Global Visa Specialists</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -53,11 +53,14 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
             margin-bottom: 30px;
         }
-
+        /* Header content now uses desktop-first layout by default */
         .header-content {
             display: flex;
             align-items: center;
-            justify-content: center; /* Center content on smaller screens */
+            justify-content: space-between; 
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 40px; 
             gap: 20px;
         }
 
@@ -71,12 +74,14 @@
 
         .branding {
             text-align: left;
+            flex-grow: 1; 
+            margin-left: 20px; 
         }
 
         .company-name {
             color: var(--text-light);
             margin: 0;
-            font-size: 2.2rem;
+            font-size: 2.5rem; /* Set to desktop size */
             letter-spacing: 2px;
             font-weight: 900;
         }
@@ -88,23 +93,6 @@
             font-style: italic;
         }
 
-        /* Adjust header layout for larger screens */
-        @media (min-width: 768px) {
-            .header-content {
-                justify-content: space-between;
-                max-width: var(--max-width);
-                margin: 0 auto;
-                padding: 0 40px;
-            }
-            .branding {
-                flex-grow: 1;
-                margin-left: 20px;
-            }
-            .company-name {
-                font-size: 2.5rem;
-            }
-        }
-        
         /* --- 3. Main Content Sections --- */
         .section {
             padding: 40px 0;
@@ -164,19 +152,13 @@
             letter-spacing: 1px;
         }
 
-        /* Contact & Video Row */
+        /* Contact & Video Row - FORCED HORIZONTAL LAYOUT */
         .contact-video-row {
             display: flex;
-            flex-direction: column; /* Stack vertically on small screens */
+            flex-direction: row; /* Always Horizontal */
+            justify-content: space-around;
             gap: 30px;
             margin-top: 20px;
-        }
-
-        @media (min-width: 600px) {
-            .contact-video-row {
-                flex-direction: row; /* Horizontal on larger screens */
-                justify-content: space-around;
-            }
         }
 
         .person-container {
@@ -196,7 +178,7 @@
         
         .contact-video-placeholder {
             width: 100%; 
-            max-width: 180px; /* Made videos slightly larger */
+            max-width: 180px; 
             height: 300px; 
             background-color: #000;
             border: 2px solid var(--accent-color);
@@ -406,7 +388,7 @@
             </div>
             
             <p class="countries">UK | USA | CANADA | DUBAI (UAE) | TURKEY | MALAYSIA | AZERBAIJAN | SPAIN</p>
-            <p style="font-size: 1.1rem;">We specialize in **Visit Visas** and securing Asian & European **Work Visas** for the Deaf community.</p>
+            <p style="font-size: 1.1rem;">We specialize in <strong>Visit Visas</strong> and securing Asian & European <strong>Work Visas</strong> for the Deaf community.</p>
         </section>
 
 
@@ -489,10 +471,10 @@
             </div>
             
             <a href="https://maps.app.goo.gl/TWZ7JtnmpQtqDYhYA" target="_blank" class="address-link">
-                📍 **OFFICE LOCATION**: Click to Navigate to Our Office Address Near Hascol Petrol Pump, Sarai Alamgir
+                📍 <strong>OFFICE LOCATION</strong>: Click to Navigate to Our Office Address Near Hascol Petrol Pump, Sarai Alamgir
             </a>
             
-            <p style="color: #aaa; font-size: 0.8rem; margin-top: 20px;">&copy; 2024 Deaf Immigration Visa Services (DIVS). All rights reserved.</p>
+            <p style="color: #aaa; font-size: 0.8rem; margin-top: 20px;">© 2024 Deaf Immigration Visa Services (DIVS). All rights reserved.</p>
         </div>
     </footer>
 
