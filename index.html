@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deaf Immigration Visa Services (DIVS)</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
@@ -423,6 +423,11 @@
             font-size: 0.75rem;
             color: #777;
         }
+
+        /* --- 12. Media Queries (Recommended for responsive layout on smaller screens) --- */
+        /* You might want to add media queries here to adjust font sizes or switch to single column layout 
+           for the flag scroll section and the contact video row on tiny phone screens. */
+
     </style>
 </head>
 
@@ -495,27 +500,28 @@
             <div class="person" style="text-align:center;">
                 <div class="contact-video-placeholder" title="Faisal Khan Sign Language" style="margin-left: auto; margin-right: auto;">
                     <video src="faisal-video.mp4" 
-                            autoplay 
-                            loop 
-                            muted 
-                            playsinline>
+                                autoplay 
+                                loop 
+                                muted 
+                                playsinline>
                         Video unavailable.
                     </video>
                 </div>
             </div>
             
             <div class="person" style="text-align:center;">
-                <div class="contact-video-placeholder" title="Nabeel Anjum Sign Language" style="margin-left: auto; right: auto;">
+                <div class="contact-video-placeholder" title="Nabeel Anjum Sign Language" style="margin-left: auto; **margin-right: auto**;">
                     <video src="nabeel-video.mp4" 
-                            autoplay 
-                            loop 
-                            muted 
-                            playsinline>
+                                autoplay 
+                                loop 
+                                muted 
+                                playsinline>
                         Video unavailable.
                     </video>
                 </div>
             </div>
         </div>
+        
         <div class="contact-info">
             
             <div class="person">
@@ -532,6 +538,7 @@
                 </a>
             </div>
 
+        </div> ****
 
         <div class="video-section">
             <h2>Latest Visa Guides on YouTube</h2>
@@ -577,5 +584,8 @@
 
     </div>
 
+    <a href="https://wa.me/923265343975" target="_blank" class="whatsapp-float" title="24/7 WhatsApp Support">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 </body>
 </html>
