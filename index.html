@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deaf Immigration Visa Services (DIVS)</title>
 
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
@@ -88,6 +88,47 @@
             font-style: italic;
         }
 
+        /* --- New Section: Official Logos --- */
+        .official-logos {
+            margin: 25px auto;
+            display: flex;
+            justify-content: space-around; /* Distribute logos evenly */
+            align-items: flex-start; /* Aligned to the top */
+            padding: 15px 10px;
+            border-top: 1px solid #383838;
+            border-bottom: 1px solid #383838;
+            background-color: #202020; 
+            border-radius: 8px;
+        }
+
+        /* Wrapper for each image and text */
+        .logo-item {
+            text-align: center;
+            flex-basis: 22%; /* Give space to all 4 logos */
+            padding: 0 5px;
+        }
+
+        .official-logos img {
+            height: 40px; /* Standardized height for all logos */
+            width: auto;
+            opacity: 0.9;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        
+        .official-logos img:hover {
+            opacity: 1;
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        .logo-caption {
+            display: block;
+            margin-top: 5px;
+            font-size: 0.7rem; /* Slightly smaller font for space */
+            color: #ccc;
+            line-height: 1.1;
+        }
+        
         /* --- 4. Specialization / Services (Flags) --- */
         .services {
             margin-bottom: 30px;
@@ -220,7 +261,7 @@
 
         .person h3 {
             font-size: 1.1rem;
-            margin: 0 0 5px 0;
+            margin: 0 0 15px 0; 
             color: var(--accent-color);
         }
 
@@ -241,6 +282,7 @@
         /* WhatsApp Button specific style */
         .person .whatsapp-link {
             background-color: var(--cta-color); 
+            margin-bottom: 15px; 
         }
 
         .person .whatsapp-link:hover {
@@ -249,22 +291,31 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
         }
 
-        /* Direct Call Button specific style */
-        .person .call-link {
-            background-color: var(--primary-color); 
-            margin-top: 2px;
-            font-size: 0.9rem;
-            padding: 8px 0;
-        }
-
-        .person .call-link:hover {
-            background-color: #007bff; 
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
-        }
-
         .person a i {
             margin-right: 8px;
+        }
+        
+        /* New styles for individual person's social icons */
+        .person-social-icons {
+            margin-top: 15px; 
+            display: flex;
+            justify-content: center; 
+            gap: 15px; 
+        }
+
+        .person-social-icons a {
+            color: var(--text-light); 
+            font-size: 24px; 
+            transition: color 0.3s ease, transform 0.3s ease;
+            box-shadow: none; 
+            padding: 0; 
+            margin: 0; 
+            display: inline-block; 
+        }
+
+        .person-social-icons a:hover {
+            color: var(--accent-color); 
+            transform: scale(1.2); 
         }
 
         /* --- 6. YOUTUBE VIDEO LINKS STYLES --- */
@@ -424,11 +475,7 @@
             color: #777;
         }
 
-        /* --- 12. Media Queries (Recommended for responsive layout on smaller screens) --- */
-        /* You might want to add media queries here to adjust font sizes or switch to single column layout 
-           for the flag scroll section and the contact video row on tiny phone screens. */
-
-    </style>
+    </style> 
 </head>
 
 <body>
@@ -439,6 +486,30 @@
             <img src="logo1.png" alt="Deaf Immigration Visa Services Logo" class="logo">
             <h1 class="company-name">DEAF IMMIGRATION VISA SERVICES</h1>
             <p class="tagline">Your Gateway to the World</p>
+        </div>
+        
+        <div class="official-logos">
+
+            <div class="logo-item">
+                <img src="fbr-logo.png" alt="FBR Pakistan Logo" title="Tax File Preparation">
+                <span class="logo-caption">Tax File Preparation</span>
+            </div>
+            
+            <div class="logo-item">
+                <img src="passport-icon.png" alt="Passport Icon" title="Passport & POC Services">
+                <span class="logo-caption">Passport / POC Services</span>
+            </div>
+
+            <div class="logo-item">
+                <img src="police-logo.png" alt="Punjab Police Logo" title="Police Clearance / Verification">
+                <span class="logo-caption">Police Clearance / Verification</span>
+            </div>
+            
+            <div class="logo-item">
+                <img src="nadra-logo.png" alt="NADRA Logo" title="FRC & NADRA Services">
+                <span class="logo-caption">FRC & NADRA Services</span>
+            </div>
+            
         </div>
         <div class="services">
             <div class="flags-scroll-container">
@@ -510,7 +581,7 @@
             </div>
             
             <div class="person" style="text-align:center;">
-                <div class="contact-video-placeholder" title="Nabeel Anjum Sign Language" style="margin-left: auto; **margin-right: auto**;">
+                <div class="contact-video-placeholder" title="Nabeel Anjum Sign Language" style="margin-left: auto; margin-right: auto;">
                     <video src="nabeel-video.mp4" 
                                 autoplay 
                                 loop 
@@ -529,6 +600,18 @@
                 <a href="https://wa.me/923265343975" target="_blank" class="whatsapp-link">
                     <i class="fab fa-whatsapp"></i> Chat / Call (WhatsApp)
                 </a> 
+                
+                 <div class="person-social-icons">
+                    <a href="https://www.youtube.com/@deafvisaservices" target="_blank" title="Faisal's YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.facebook.com/Faisalkhan88990/" target="_blank" title="Faisal's Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@yourtiktok" target="_blank" title="Faisal's TikTok"> 
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
             </div>
             
             <div class="person">
@@ -536,9 +619,21 @@
                 <a href="https://wa.me/923344645420" target="_blank" class="whatsapp-link">
                     <i class="fab fa-whatsapp"></i> Chat / Call (WhatsApp)
                 </a>
+                
+                <div class="person-social-icons">
+                    <a href="https://www.youtube.com/channel/NabeelChannel" target="_blank" title="Nabeel's YouTube"> 
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.facebook.com/NabeelAnjumPage/" target="_blank" title="Nabeel's Facebook"> 
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/nabeel_instagram/" target="_blank" title="Nabeel's Instagram"> 
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
             </div>
 
-        </div> ****
+        </div>
 
         <div class="video-section">
             <h2>Latest Visa Guides on YouTube</h2>
