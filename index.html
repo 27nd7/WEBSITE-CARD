@@ -67,21 +67,21 @@
             text-align: center;
         }
 
-        /* New container for dual logos */
+        /* New container for dual logos (now only holding one logo) */
         .logo-group {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-bottom: 10px; 
-            gap: 20px; /* Space between the two icons */
+            gap: 20px; 
         }
 
-        /* New style for the Deaf Icon */
+        /* The original .deaf-icon CSS is now unused for the header, but kept for the flag section image */
         .deaf-icon {
-            width: 65px; 
+            width: 45px; 
             height: auto;
             border-radius: 50%; 
-            border: 3px solid var(--accent-color); 
+            border: 2px solid var(--accent-color); 
             transition: transform 0.3s;
         }
 
@@ -93,7 +93,8 @@
             transition: transform 0.3s;
         }
 
-        .deaf-icon:hover, .main-logo:hover {
+        /* Simplified hover, now applies to main logo only */
+        .main-logo:hover {
             transform: scale(1.05);
         }
         
@@ -164,7 +165,7 @@
             width: 100%;
             overflow-x: auto; /* Enables horizontal scrolling */
             -webkit-overflow-scrolling: touch; /* Improved mobile scrolling */
-            margin-bottom: 20px;
+            margin-bottom: 10px; /* Reduced margin to make space for the new icon below */
             padding-bottom: 10px; /* Space for scroll bar */
             border-radius: 5px;
         }
@@ -200,7 +201,7 @@
         }
 
         .flag-link:hover {
-            transform: scale(1.2); 
+            transform: scale(1.15); 
             box-shadow: 0 0 15px var(--text-light);
         }
 
@@ -211,6 +212,23 @@
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
             display: block; 
         }
+        
+        /* Style for the single Deaf Icon below the flags */
+        .services-deaf-icon {
+            display: block;
+            width: 40px;
+            height: auto;
+            margin: 10px auto 20px auto; /* Centered with vertical margins */
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .services-deaf-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--secondary-accent);
+        }
+
 
         h2 {
             font-size: 1.4rem;
@@ -249,6 +267,7 @@
             margin-top: 20px;
             padding-top: 20px;
             border-top: 1px solid #383838;
+            flex-wrap: wrap; 
         }
 
         .contact-video-placeholder {
@@ -461,8 +480,8 @@
             position: fixed;
             width: 60px;
             height: 60px;
-            bottom: 30px;
-            right: 30px;
+            bottom: 15px; 
+            right: 15px;  
             background-color: #25d366;
             color: #fff;
             border-radius: 50%;
@@ -498,6 +517,42 @@
             color: #777;
         }
 
+        /* --- 12. MOBILE RESPONSIVENESS FIXES --- */
+        @media (max-width: 550px) {
+            .card-container {
+                padding: 30px 20px;
+            }
+
+            .contact-video-row {
+                flex-direction: column; 
+                align-items: center;
+            }
+
+            .contact-info {
+                flex-direction: column; 
+                align-items: center;
+                gap: 20px;
+            }
+
+            .person {
+                min-width: 100%;
+                padding: 0;
+            }
+
+            .person .whatsapp-link {
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .whatsapp-float {
+                bottom: 10px;
+                right: 10px;
+                width: 50px; 
+                height: 50px;
+                font-size: 30px;
+            }
+        }
     </style>
 </head>
 
@@ -507,7 +562,6 @@
         
         <div class="header">
             <div class="logo-group">
-                <img src="deaf-icon.png" alt="Deaf Icon for Services" class="deaf-icon">
                 <img src="logo1.png" alt="Deaf Immigration Visa Services Logo" class="main-logo">
             </div>
             <h1 class="company-name">DEAF IMMIGRATION VISA SERVICES</h1>
@@ -537,50 +591,67 @@
             </div>
             
         </div>
+        
         <div class="services">
             <div class="flags-scroll-container">
                 <div class="flags-section">
+                    
                     <a href="uk-docs.html" class="flag-link" title="United Kingdom - Documents">
                         <img src="https://flagcdn.com/w40/gb.png" alt="UK Flag" class="flag-image">
                     </a>
+
                     <a href="usa-docs.html" class="flag-link" title="United States - Documents">
                         <img src="https://flagcdn.com/w40/us.png" alt="USA Flag" class="flag-image">
                     </a>
+
                     <a href="canada-docs.html" class="flag-link" title="Canada - Documents">
                         <img src="https://flagcdn.com/w40/ca.png" alt="Canada Flag" class="flag-image">
                     </a>
+
                     <a href="dubai-docs.html" class="flag-link" title="Dubai / UAE - Documents">
                         <img src="https://flagcdn.com/w40/ae.png" alt="Dubai/UAE Flag" class="flag-image">
                     </a>
+
                     <a href="turkey-docs.html" class="flag-link" title="Turkey - Documents">
                         <img src="https://flagcdn.com/w40/tr.png" alt="Turkey Flag" class="flag-image">
                     </a>
+
                     <a href="malaysia-docs.html" class="flag-link" title="Malaysia - Documents">
                         <img src="https://flagcdn.com/w40/my.png" alt="Malaysia Flag" class="flag-image">
                     </a>
+
                     <a href="azerbaijan-docs.html" class="flag-link" title="Azerbaijan - Documents">
                         <img src="https://flagcdn.com/w40/az.png" alt="Azerbaijan Flag" class="flag-image">
                     </a>
+
                     <a href="spain-docs.html" class="flag-link" title="Spain / Schengen - Documents">
                         <img src="https://flagcdn.com/w40/es.png" alt="Spain Flag" class="flag-image">
                     </a>
+
                     <a href="italy-docs.html" class="flag-link" title="Italy / Schengen - Documents">
                         <img src="https://flagcdn.com/w40/it.png" alt="Italy Flag" class="flag-image">
                     </a>
+
                     <a href="germany-docs.html" class="flag-link" title="Germany / Schengen - Documents">
                         <img src="https://flagcdn.com/w40/de.png" alt="Germany Flag" class="flag-image">
                     </a>
+
                     <a href="china-docs.html" class="flag-link" title="China - Documents">
                         <img src="https://flagcdn.com/w40/cn.png" alt="China Flag" class="flag-image">
                     </a>
+
                     <a href="thailand-docs.html" class="flag-link" title="Thailand - Documents">
                         <img src="https://flagcdn.com/w40/th.png" alt="Thailand Flag" class="flag-image">
                     </a>
+
                     <a href="vietnam-docs.html" class="flag-link" title="Vietnam - Documents">
                         <img src="https://flagcdn.com/w40/vn.png" alt="Vietnam Flag" class="flag-image">
                     </a>
+
                 </div>
             </div>
+            
+            <img src="deaf-icon.png" alt="Deaf Accessible Services" class="services-deaf-icon" title="All services are Deaf Accessible">
             
             <h2>Specializing In:</h2>
             <p class="countries">
@@ -600,7 +671,8 @@
                                 autoplay 
                                 loop 
                                 muted 
-                                playsinline>
+                                playsinline
+                                poster="faisal-video-poster.png">
                         Video unavailable.
                     </video>
                 </div>
@@ -612,7 +684,8 @@
                                 autoplay 
                                 loop 
                                 muted 
-                                playsinline>
+                                playsinline
+                                poster="nabeel-video-poster.png">
                         Video unavailable.
                     </video>
                 </div>
@@ -697,14 +770,14 @@
             <span class="social-caption">WhatsApp Channel | YouTube | Facebook</span>
         </div>
         
-        <a href="https://maps.app.goo.gl/TWZ7JtnmpQtqDYhYA" target="_blank" class="address-link">
+        <a href="https://www.google.com/maps/search/Office+Address+Near+Hascol+Petrol+Pump,+Sarai+Alamgir" target="_blank" class="address-link">
             📍 CLICK TO NAVIGATE: Office Address Near Hascol Petrol Pump, Sarai Alamgir
         </a>
 
         <p class="credit-line">Website Design and Maintenance Credit to: Ahmed</p>
 
     </div>
-
+    
     <a href="https://wa.me/923265343975" target="_blank" class="whatsapp-float" title="24/7 WhatsApp Support">
         <i class="fab fa-whatsapp"></i>
     </a>
