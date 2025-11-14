@@ -9,7 +9,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
-    <style> 
+    <style>
         /* --- 1. Global & Variables --- */
         :root {
             --accent-color: #ffaa00; /* Orange/Yellow for text and highlights */
@@ -66,14 +66,37 @@
             margin-bottom: 25px; 
             text-align: center;
         }
-        
-        .logo {
+
+        /* New container for dual logos */
+        .logo-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px; 
+            gap: 20px; /* Space between the two icons */
+        }
+
+        /* New style for the Deaf Icon */
+        .deaf-icon {
+            width: 65px; 
+            height: auto;
+            border-radius: 50%; 
+            border: 3px solid var(--accent-color); 
+            transition: transform 0.3s;
+        }
+
+        /* Style for the main logo, renamed from .logo to .main-logo */
+        .main-logo { 
             width: 80px; 
             height: auto;
             border-radius: 50%; 
-            margin-bottom: 10px;
+            transition: transform 0.3s;
         }
 
+        .deaf-icon:hover, .main-logo:hover {
+            transform: scale(1.05);
+        }
+        
         .company-name {
             color: var(--text-light);
             margin: 0;
@@ -146,7 +169,7 @@
             border-radius: 5px;
         }
 
-        /* Hide scrollbar for aesthetics, but keep functionality */
+        /* Scrollbar styles (Optional, for aesthetics) */
         .flags-scroll-container::-webkit-scrollbar {
             height: 5px; 
         }
@@ -475,7 +498,7 @@
             color: #777;
         }
 
-    </style> 
+    </style>
 </head>
 
 <body>
@@ -483,7 +506,10 @@
     <div class="card-container">
         
         <div class="header">
-            <img src="logo1.png" alt="Deaf Immigration Visa Services Logo" class="logo">
+            <div class="logo-group">
+                <img src="deaf-icon.png" alt="Deaf Icon for Services" class="deaf-icon">
+                <img src="logo1.png" alt="Deaf Immigration Visa Services Logo" class="main-logo">
+            </div>
             <h1 class="company-name">DEAF IMMIGRATION VISA SERVICES</h1>
             <p class="tagline">Your Gateway to the World</p>
         </div>
